@@ -3,11 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
 
+# Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Import the main app from backend.server
 from backend.server import app
 
-# CORS for Vercel
+# Add CORS for Vercel
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
