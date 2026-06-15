@@ -18,5 +18,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Add root route
+@app.get("/")
+async def root():
+    return {"message": "MB Grocery API is running"}
+
 # Vercel handler
 handler = app
